@@ -13,7 +13,7 @@ pipeline {
         sh 'ls -al'
         sh 'cat main.go'
         cat build.groovy
-        echo ${LOGIN}
+        echo "${LOGIN}"
       }
     }
   }
