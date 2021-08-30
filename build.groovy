@@ -15,6 +15,7 @@ pipeline {
         sh 'cat build.groovy'
         echo "$LOGIN_USR"
         echo "$LOGIN_PSW"
+        sh "ping docker"
       }
     }
   }
