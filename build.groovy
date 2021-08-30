@@ -12,8 +12,8 @@ pipeline {
         sh 'docker version'
         sh 'ls -al'
         sh 'cat main.go'
-        cat build.groovy
-        echo "${LOGIN}"
+        sh 'cat build.groovy'
+        sh 'echo "${LOGIN}"'
       }
     }
   }
