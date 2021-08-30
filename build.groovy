@@ -13,8 +13,8 @@ pipeline {
         sh 'ls -al'
         sh 'cat main.go'
         sh 'cat build.groovy'
-        echo "${LOGIN_USR}"
-        echo "${LOGIN_PSW}"
+        echo $LOGIN_USR
+        echo $LOGIN_PSW
       }
     }
   }
