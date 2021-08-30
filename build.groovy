@@ -4,6 +4,7 @@ pipeline {
   environment {
       LOGIN = credentials('USER1')
 //       PASS  = credentials('')
+  }
 
   stages {
     stage("test") {
