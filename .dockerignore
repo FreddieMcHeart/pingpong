@@ -1,0 +1,5 @@
+.git
+.idea
+build.groovy
+.gitignore
+Dockerfile
