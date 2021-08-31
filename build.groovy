@@ -12,16 +12,11 @@ pipeline {
         sh 'ls -al'
         sh 'cat main.go'
         sh 'cat build.groovy'
-        sh 'docker network create test'
         sh 'docker build -t test:me.1 .'
-        sh 'docker run --name test.me --network test --rm -d -p 0.0.0.0:3000:3000 test:me.1'
-        sh 'docker run --name testing.you --network test --rm -d alpine tail -f > /dev/null'
-        sh 'docker exec -d testing.you apk add curl'
-        sh 'sleep 10'
-        sh 'docker exec -it testing.you curl -i -u test.me:test.me2 http://test.me:3000/auth'
-        sh 'docker exec -it testing.you curl -i -u test.me:test.me http://test.me:3000/auth'
+        sh 'docker run --name test.me --rm -d -p 0.0.0.0:3000:3000 test:me.1'
+        sh 'curl -i -u test.me:test.me2 http://docker:3000/auth'
+        sh 'curl -i -u test.me:test.me http://docker:3000/auth'
         sh 'docker stop $(docker ps -aq)'
-        ah 'docker network rm test'
       }
     }
   }
