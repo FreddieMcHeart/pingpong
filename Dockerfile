@@ -25,10 +25,10 @@ FROM scratch
 LABEL maintainer="(C) FreddieMcHeart | iwonnapapper@gmail.com | https://github.com/FreddieMcHeart"
 
 COPY --from=builder /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/
-COPY --from=builder /pong/main /
+COPY --from=builder /pong/gomain /
 
 EXPOSE 3000
 
 LABEL app=pong
 
-ENTRYPOINT ["/main"]
+ENTRYPOINT ["/gomain"]
